@@ -10,7 +10,7 @@ import {
 } from '@heroicons/react/24/outline';
 import {Button} from '@/app/ui/button';
 import {createInvoice, State} from "@/app/lib/actions";
-import {useActionState} from "react";
+import {useActionState, useState} from "react";
 
 export default function Form({customers}: { customers: CustomerField[] }) {
 
@@ -20,6 +20,7 @@ export default function Form({customers}: { customers: CustomerField[] }) {
         }
     const [state, formAction] = useActionState(createInvoice, initialState)
 
+    console.log(state)
 
     return (
         <form action={formAction}>
